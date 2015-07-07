@@ -1,0 +1,23 @@
+{
+  "name": "validation-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IpWebmaster/validatorForm.git"
+  },
+  "author": "iv.popov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IpWebmaster/validatorForm/issues"
+  },
+  "homepage": "https://github.com/IpWebmaster/validatorForm#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.5",
+    "jquery": "^1.11.3"
+  }
+}

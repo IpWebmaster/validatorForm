@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/node_modules/jquery/dist/jquery.min.js"/>
+    <title>Validation Form</title>
+</head>
+<body>
+<section id="js-ecp-form" class="ecp-form dialog-form">
+    <form action="/get_eds/ajax.php" target="_top" method="POST" class="js-feedback">
+        <input type="hidden" name="action" value="submit"/>
+        <div class="dialog-form__cnt">
+            <div class="form-group">
+                <label for="name" class="dialog-form__lbl">Фамилия Имя Отчество<span class="dialog-form__star-required">*</span></label>
+                <input type="text" placeholder="Пример: Михаил Сергеевич" id="name" class="dialog-form__it form-control" value="" name="fio">
+            </div>
+
+            <div class="form-group">
+                <label for="mail" class="dialog-form__lbl">Ваш e-mail<span class="dialog-form__star-required">*</span></label>
+                <input type="email" placeholder="Пример: mail_name@sitename.com" id="mail" class="dialog-form__it form-control" value="" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="topic" class="dialog-form__lbl">Комментарии<span
+                        class="dialog-form__star-required">*</span></label>
+            <textarea class="form-control dialog-form__itx faq__form__itx" name="txt" rows="4"
+                      placeholder="Текст сообщения..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputFile">Загрузить документы</label>
+                <input type="file" id="exampleInputFile" data-gu-init data-gu-url="/get_eds/ajax.php?action=upload" data-gu-max-size="15" data-gu-multiple="true" data-gu-removed="/get_eds/ajax.php?action=delete">
+            </div>
+            <hr/>
+            <div class="dialog-form__buttons text-right">
+                <button type="submit" class="btn btn-success dialog-form__btn--control js-ecp-submit"
+                        name="go">Отправить заявку</button>
+                <button type="reset" class="btn btn--gray-light dialog-form__btn--control">Очистить поля</button>
+            </div>
+            <p><span class="dialog-form__star-required">*</span> Поля обозначенные звездочкой являются обязательными для заполнения</p>
+        </div>
+    </form>
+</section>
+</body>
+</html>
