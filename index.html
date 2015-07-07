@@ -3,7 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/node_modules/jquery/dist/jquery.min.js"/>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="script.js"></script>
     <title>Validation Form</title>
 </head>
 <body>
@@ -26,11 +27,6 @@
                         class="dialog-form__star-required">*</span></label>
             <textarea class="form-control dialog-form__itx faq__form__itx" name="txt" rows="4"
                       placeholder="Текст сообщения..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputFile">Загрузить документы</label>
-                <input type="file" id="exampleInputFile" data-gu-init data-gu-url="/get_eds/ajax.php?action=upload" data-gu-max-size="15" data-gu-multiple="true" data-gu-removed="/get_eds/ajax.php?action=delete">
             </div>
             <hr/>
             <div class="dialog-form__buttons text-right">
