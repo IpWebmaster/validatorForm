@@ -9,32 +9,58 @@
 </head>
 <body>
 <section id="js-ecp-form" class="ecp-form dialog-form">
-    <form action="/get_eds/ajax.php" target="_top" method="POST" class="js-feedback">
+    <form action="#" target="_top" method="POST" class="js-feedback">
         <input type="hidden" name="action" value="submit"/>
+
         <div class="dialog-form__cnt">
             <div class="form-group">
-                <label for="name" class="dialog-form__lbl">Фамилия Имя Отчество<span class="dialog-form__star-required">*</span></label>
-                <input type="text" placeholder="Пример: Михаил Сергеевич" id="name" class="dialog-form__it form-control" value="" name="fio">
+                <label for="name" class="dialog-form__lbl">
+                    Фамилия Имя Отчество<span class="dialog-form__star-required">*</span>
+                </label>
+                <input type="text"
+                       id="name"
+                       class="dialog-form__it form-control"
+                       placeholder="Пример: Михаил Сергеевич"
+                       value=""
+                       name="fio">
             </div>
 
             <div class="form-group">
-                <label for="mail" class="dialog-form__lbl">Ваш e-mail<span class="dialog-form__star-required">*</span></label>
-                <input type="email" placeholder="Пример: mail_name@sitename.com" id="mail" class="dialog-form__it form-control" value="" name="email">
+                <label for="mail" class="dialog-form__lbl">
+                    Ваш e-mail<span class="dialog-form__star-required">*</span>
+                </label>
+                <input type="email"
+                       id="mail"
+                       class="dialog-form__it form-control"
+                       placeholder="Пример: mail_name@sitename.com"
+                       value=""
+                       name="email">
             </div>
 
             <div class="form-group">
-                <label for="topic" class="dialog-form__lbl">Комментарии<span
-                        class="dialog-form__star-required">*</span></label>
-            <textarea class="form-control dialog-form__itx faq__form__itx" name="txt" rows="4"
-                      placeholder="Текст сообщения..."></textarea>
+                <label for="topic" class="dialog-form__lbl">
+                    Комментарии<span class="dialog-form__star-required">*</span>
+                </label>
+                <textarea id="topic"
+                          class="form-control dialog-form__itx faq__form__itx"
+                          placeholder="Текст сообщения..."
+                          name="txt"
+                          rows="4">
+                </textarea>
             </div>
+
             <hr/>
+
             <div class="dialog-form__buttons text-right">
-                <button type="submit" class="btn btn-success dialog-form__btn--control js-ecp-submit"
-                        name="go">Отправить заявку</button>
+                <button type="submit" class="btn btn-success dialog-form__btn--control js-ecp-submit" name="go">
+                    Отправить заявку
+                </button>
                 <button type="reset" class="btn btn--gray-light dialog-form__btn--control">Очистить поля</button>
             </div>
-            <p><span class="dialog-form__star-required">*</span> Поля обозначенные звездочкой являются обязательными для заполнения</p>
+            <p>
+                <span class="dialog-form__star-required">*</span> Поля обозначенные звездочкой являются обязательными для
+                заполнения
+            </p>
         </div>
     </form>
 </section>
