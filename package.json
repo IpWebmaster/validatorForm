@@ -18,6 +18,10 @@
   "homepage": "https://github.com/IpWebmaster/validatorForm#readme",
   "devDependencies": {
     "bootstrap": "^3.3.5",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-plumber": "^1.0.1",
     "jquery": "^1.11.3"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "preset": "yandex",
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch",
+    "case",
+    "default"
+  ],
+  "requireSpaceBeforeBlockStatements": 1,
+  "disallowMultipleVarDecl": null
+}

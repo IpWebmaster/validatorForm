@@ -1,6 +1,5 @@
 $(function () {
-    "use strict";
-
+    'use strict';
     (function () {
         var form = $('.js-feedback'),
             btnSubmit = $('.js-ecp-submit'),
@@ -11,64 +10,64 @@ $(function () {
 
             config = [
                 {
-                    "name": "email",
-                    "validators": {
-                        "required": true,
-                        "pattern": "^([\\w-]+\\.)*[\\w-]+@[\\w-]+(\\.[\\w-]+)*\\.[a-z]{2,6}$"
+                    name: 'email',
+                    validators: {
+                        required: true,
+                        pattern: '^([\\w-]+\\.)*[\\w-]+@[\\w-]+(\\.[\\w-]+)*\\.[a-z]{2,6}$'
                     },
-                    "errorMsg": {
-                        "required": "Поле обязательное для заполнения",
-                        "pattern": "Введенный Email не корректный. Пример: name@sitename.ru."
+                    errorMsg: {
+                        required: 'Поле обязательное для заполнения',
+                        pattern: 'Введенный Email не корректный. Пример: name@sitename.ru.'
                     }
                 },
                 {
-                    "name": "fio",
-                    "validators": {
-                        "required": true
+                    name: 'fio',
+                    validators: {
+                        required: true
                     },
-                    "errorMsg": {
-                        "required": "Поле обязательное для заполнения"
+                    errorMsg: {
+                        required: 'Поле обязательное для заполнения'
                     }
                 },
                 {
-                    "name": "code",
-                    "validators": {
-                        "required": true,
-                        "pattern": "[0-9]+$"
+                    name: 'code',
+                    validators: {
+                        required: true,
+                        pattern: '[0-9]+$'
                     },
-                    "errorMsg": {
-                        "required": "Поле код города обязательное для заполнения",
-                        "pattern": "Поле код города должно содержать только цифры"
+                    errorMsg: {
+                        required: 'Поле код города обязательное для заполнения',
+                        pattern: 'Поле код города должно содержать только цифры'
                     }
                 },
                 {
-                    "name": "phone_number",
-                    "validators": {
-                        "required": true,
-                        "pattern": "^([0-9]|[\\-])+$"
+                    name: 'phone_number',
+                    validators: {
+                        required: true,
+                        pattern: '^([0-9]|[\\-])+$'
                     },
-                    "errorMsg": {
-                        "required": "Поле номер телефона обязательное для заполнения",
-                        "pattern": "Поле номер телефона должно содержать только цифры или тире"
+                    errorMsg: {
+                        required: 'Поле номер телефона обязательное для заполнения',
+                        pattern: 'Поле номер телефона должно содержать только цифры или тире'
                     }
                 },
                 {
-                    "name": "phone_add",
-                    "validators": {
-                        "pattern": "^[0-9]+$"
+                    name: 'phone_add',
+                    validators: {
+                        pattern: '^[0-9]+$'
                     },
-                    "errorMsg": {
-                        "required": "Поле номер телефона обязательное для заполнения",
-                        "pattern": "Поле добавочный номер должно содержать только цифры"
+                    errorMsg: {
+                        required: 'Поле номер телефона обязательное для заполнения',
+                        pattern: 'Поле добавочный номер должно содержать только цифры'
                     }
                 },
                 {
-                    "name": "txt",
-                    "validators": {
-                        "required": true
+                    name: 'txt',
+                    validators: {
+                        required: true
                     },
-                    "errorMsg": {
-                        "required": "Поле обязательное для заполнения"
+                    errorMsg: {
+                        required: 'Поле обязательное для заполнения'
                     }
                 }
             ],
@@ -83,7 +82,7 @@ $(function () {
             validationForm = function () {
                 _.each(config, function (configItem) {
                     validationField(configItem);
-                })
+                });
             },
 
             /**
@@ -107,7 +106,7 @@ $(function () {
                 _.each(configItem.validators, function (value, key) {
                     if (hasOwn(methodsValidation, key + 'Validator')) {
                         if (!methodsValidation[key + 'Validator'](field.val(), configItem) && _.isEmpty(errors)) {
-                            errors['message'] = configItem.errorMsg[key];
+                            errors.message = configItem.errorMsg[key];
                         }
                     }
                 });
@@ -128,9 +127,7 @@ $(function () {
              * @param {String} configName Имя поля
              */
             addDivError = function (field, configName) {
-                var divError = $('<div/>', {
-                    'class': 'dialog-form__error-msg alert alert-danger js-error-' + configName
-                });
+                var divError = $('<div/>').addClass('dialog-form__error-msg alert alert-danger js-error-' + configName);
 
                 field.parent().append(divError);
             },
@@ -184,14 +181,14 @@ $(function () {
              */
             sendFeedback = function () {
                 $.ajax({
-                    method: "POST",
-                    url: "/ecp/ajax.php",
+                    method: 'POST',
+                    url: '/ecp/ajax.php',
                     data: form.serialize()
                 })
-                    .done(function( resp ) {
+                    .done(function (resp) {
                         if (resp.success) {
                             $.genaBox.close();
-                            Modaller.alert({text:resp.data});
+                            Modaller.alert({text: resp.data});
                             if (hasOwn(resp, 'code')) {
                                 updateCaptcha(resp.code);
                             }
@@ -203,8 +200,8 @@ $(function () {
                             }
                         }
                     })
-                    .fail(function( jqXHR, textStatus ) {
-                        console.log( "Request failed: " + textStatus );
+                    .fail(function (jqXHR, textStatus) {
+                        console.log('Request failed: ' + textStatus);
                     });
             },
 
@@ -226,7 +223,7 @@ $(function () {
                     e.preventDefault();
                     hasError = false;
                     validationForm();
-                    if(!hasError) {
+                    if (!hasError) {
                         sendFeedback();
                     }
                 });
