@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="script.js"></script>
+
     <title>Validation Form</title>
 </head>
 <body>
 <section id="js-ecp-form" class="ecp-form dialog-form">
-    <form action="#" target="_top" method="POST" class="js-feedback">
+    <form action="#" method="POST" id="js-form-name">
         <input type="hidden" name="action" value="submit"/>
 
         <div class="dialog-form__cnt">
@@ -64,5 +64,6 @@
         </div>
     </form>
 </section>
+<script src="build/app.min.js"></script>
 </body>
 </html>
